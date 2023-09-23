@@ -1,0 +1,69 @@
+1.Teste de Criação de Contas:
+   - Cenário: Criar uma conta poupança.
+     - Verificação: A conta deve ser criada com um saldo mínimo de R$50,00.
+
+   - Cenário: Criar uma conta salário.
+     - Verificação: A conta deve ser criada com saldo zero.
+
+   - Cenário: Criar uma conta corrente.
+     - Verificação: A conta deve ser criada com saldo zero.
+
+
+
+2.Teste de Depósito:
+   - Cenário: Depositar R$100,00 em uma conta poupança.
+     - Verificação: O saldo da conta poupança deve ser R$150,00.
+
+   - Cenário: Depositar R$200,00 em uma conta salário.
+     - Verificação: O saldo da conta salário deve ser R$200,00.
+
+   - Cenário: Depositar R$300,00 em uma conta corrente.
+     - Verificação: O saldo da conta corrente deve ser R$300,00.
+
+
+
+3.Teste de Saque:
+   - Cenário: Sacar R$50,00 de uma conta poupança com saldo de R$100,00.
+     - Verificação: Deve ser possível sacar e o saldo deve ser R$50,00 após o saque.
+
+   - Cenário: Tentar sacar R$100,00 de uma conta salário com saldo de R$200,00.
+     - Verificação: O saque não deve ser permitido, e o saldo deve permanecer R$200,00.
+
+   - Cenário: Sacar R$200,00 de uma conta corrente com saldo de R$300,00.
+     - Verificação: Deve ser possível sacar e o saldo deve ser R$100,00 após o saque.
+
+
+
+4.Teste de Transferência Entre Contas:
+   - Cenário: Transferir R$50,00 de uma conta poupança para uma conta corrente.
+     - Verificação: O saldo da conta poupança deve ser reduzido em R$50,00, e o saldo da conta corrente deve aumentar em R$50,00.
+
+   - Cenário: Tentar transferir R$100,00 de uma conta salário para uma conta poupança.
+     - Verificação: A transferência não deve ser permitida, e os saldos das contas devem permanecer inalterados.
+
+
+
+5.Teste de Geração de Extrato por Período:
+   - Cenário: Gerar extrato de uma conta corrente para o último mês.
+     - Verificação: Deve ser possível gerar o extrato com as transações do último mês.
+
+   - Cenário: Gerar extrato de uma conta poupança para o último trimestre.
+     - Verificação: Deve ser possível gerar o extrato com as transações do último trimestre.
+
+
+
+6.Teste de Aplicação de Financiamento:
+   - Cenário: Solicitar um financiamento de R$1000,00 em uma conta corrente com saldo de R$500,00.
+     - Verificação: A solicitação de financiamento deve ser aceita, e o saldo da conta corrente deve aumentar em R$1000,00.
+
+   - Cenário: Tentar solicitar um financiamento de R$2000,00 em uma conta salário com saldo de R$1000,00.
+     - Verificação: A solicitação de financiamento não deve ser aceita, e o saldo da conta salário deve permanecer inalterado.
+
+
+
+7.Teste de Aplicação Financeira:
+   - Cenário: Aplicar R$500,00 em uma conta poupança.
+     - Verificação: A aplicação deve ser aceita, e o saldo da conta poupança deve aumentar em R$500,00.
+
+   - Cenário: Aplicar R$1000,00 em uma conta corrente.
+     - Verificação: A aplicação não deve ser aceita, e o saldo da conta corrente deve permanecer inalterado.
