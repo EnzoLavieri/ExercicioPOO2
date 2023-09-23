@@ -1,0 +1,62 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class BancoTest {
+    private Banco banco;
+
+    @BeforeEach
+    void setUp() {
+        banco = new Banco();
+    }
+
+    @Test
+    void testCriarContaPoupanca() {
+        banco.criarContaPoupanca(1);
+        Conta conta = banco.encontrarConta(1);
+
+        assertNotNull(conta);
+        assertTrue(conta instanceof ContaPoupanca);
+        assertEquals(50.0, conta.getSaldo());
+    }
+
+    @Test
+    void testCriarContaSalario() {
+        banco.criarContaSalario(2);
+        Conta conta = banco.encontrarConta(2);
+
+        assertNotNull(conta);
+        assertTrue(conta instanceof ContaSalario);
+        assertEquals(0.0, conta.getSaldo());
+    }
+
+    @Test
+    void testCriarContaCorrente() {
+        banco.criarContaCorrente(3);
+        Conta conta = banco.encontrarConta(3);
+
+        assertNotNull(conta);
+        assertTrue(conta instanceof ContaCorrente);
+        assertEquals(0.0, conta.getSaldo());
+    }
+
+    @Test
+    void testDepositar() {
+        banco.criarContaPoupanca(1);
+        Conta conta = banco.encontrarConta(1);
+        conta.depositar(100);
+
+        assertEquals(150.0, conta.getSaldo());
+    }
+
+    @Test
+    void testSacar() {
+        banco.criarContaSalario(2);
+        Conta conta = banco.encontrarConta(2);
+        boolean resultado = conta.sacar(50);
+
+        assertTrue(resultado);
+        assertEquals(-50.0, conta.getSaldo());
+    }
+}
